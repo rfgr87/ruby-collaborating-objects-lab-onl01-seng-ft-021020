@@ -23,14 +23,20 @@ class Artist
   end
   
   def self.find_or_create_by_name(name)
-    if self.all.include?(name)
-      @artist = self.all.select{|x| x.name == name}
+    if self.all.any? do |x| 
+        if x.name == name
+          @artist_object = x
+          self.artist = @artist_object
+          return @artist_object
+        end
+      end
     else
-      @artist = Artist.new(name)
-      @@all << @Artist
+      @artist_object = Artist.new(name)
+      self.artist = @artist_object
     end
-    @artist
+    @artist_object
   end
+
   
   # def find_or_create_by_name(name)
   # end
