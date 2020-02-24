@@ -24,11 +24,10 @@ class Song
   end
 
   def artist_name=(name)
-    @artist_object = 
     if Artist.all.include?(name)
-      Artist.all.select{|x| x.name == name} 
+       @artist_object = Artist.all.select{|x| x.name == name} 
     else
-      Artist.new(name)
+       @artist_object = Artist.new(name)
     end
     @artist_object
   end
