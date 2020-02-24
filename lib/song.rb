@@ -23,7 +23,17 @@ class Song
     @song
   end
 
-  
+  def artist_name=(name)
+    @artist_object = 
+    if Artist.all.include?(name)
+      Artist.all.select{|x| x.name == name} 
+    else
+      Artist.new(name)
+    end
+    @artist_object
+  end
+    
+  def find_or_create_by_name
   
     
 end 
