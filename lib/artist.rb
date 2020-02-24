@@ -22,7 +22,7 @@ class Artist
   
   def fins_or_create_by_name(name)
     if self.name.nil?
-      
+      self.
     
   end 
   
