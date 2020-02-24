@@ -17,7 +17,7 @@ class Artist
   end
   
   def songs 
-    Songs.all.select{|x| x.artist == self}
+    Song.all.select{|x| x.artist == self}
   end 
   
   def finds_or_create_by_name(name)
@@ -29,7 +29,7 @@ class Artist
   end
     
   def print_songs
-    Songs.all.select{|x| x.artist == self}
+    Song.all.select{|x| x.artist == self}
   end
   
 end
