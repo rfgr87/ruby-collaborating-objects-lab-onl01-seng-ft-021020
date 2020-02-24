@@ -24,8 +24,11 @@ class Artist
     if self.name.nil?
       @artist = Artist.new(name)
     else
-      @self.name = name
+      self.name = name
+      @artist = self
     end
+    @artist
+   
   end
     
   def print_songs
