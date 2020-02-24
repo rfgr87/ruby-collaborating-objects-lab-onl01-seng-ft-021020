@@ -24,7 +24,12 @@ class Song
   end
 
   def artist_name=(name)
-    Artist.all.any?{|x| x.name == name}
+    if Artist.all.any? do |x| 
+      if x.name == name
+        @artist_object = x 
+      end
+    end
+  else
       @artist_object = Artist.all.select{|x| x.name == name} 
       self.artist = @artist_object  
     else
