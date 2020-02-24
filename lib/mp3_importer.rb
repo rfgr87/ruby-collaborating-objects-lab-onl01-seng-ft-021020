@@ -6,8 +6,8 @@ class MP3Importer
     @mp3_file_names = []
   end
   
-  def files(path)
-    @mp3_file_names = Dir.entries(path).select {|f| !File.directory? f}
+  def files
+    @mp3_file_names = Dir.entries(@path).select {|f| !File.directory? f}
   end
   
   def import
