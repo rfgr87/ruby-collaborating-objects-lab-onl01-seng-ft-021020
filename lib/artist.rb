@@ -28,5 +28,8 @@ class Artist
     end
   end
     
+  def print_songs
+    Songs.all.select{|x| x.artist == self}
+  end
   
 end
