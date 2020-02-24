@@ -21,11 +21,10 @@ class Artist
   end 
   
   def find_or_create_by_name(name)
-    if @@all.include?(name)
-      @artist = @@all.select{|x| x.name == name}
+    if self.all.include?(name)
+      @artist = self.all.select{|x| x.name == name}
     else
       @artist = Artist.new(name)
-      @@all << @artist
     end
     @artist
   end
