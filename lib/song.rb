@@ -16,8 +16,10 @@ class Song
     @artist = 
     if Artist.all.include?(filename.split(" - ")[0])
       Artist.all.select{|x| x.name == filename.split(" - ")[0]} 
-    
-    @song.artist = 
+    else
+      Artist.new(filename.split(" - ")[0])
+    end
+    @song.artist = @artist
     @song
   end
 
