@@ -27,6 +27,7 @@ class Song
     if Artist.all.any? do |x| 
         if x.name == name
           @artist_object = x
+          self.artist = @artist_object
           return @artist_object
         end
       end
