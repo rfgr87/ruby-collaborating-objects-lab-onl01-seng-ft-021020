@@ -26,13 +26,12 @@ class Artist
     if self.all.any? do |x| 
         if x.name == name
           @artist_object = x
-          self = @artist_object
           return @artist_object
         end
       end
     else
       @artist_object = Artist.new(name)
-      self = @artist_object
+      @artist_object
     end
     @artist_object
   end
