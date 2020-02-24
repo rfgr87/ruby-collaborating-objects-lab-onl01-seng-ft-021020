@@ -25,6 +25,7 @@ class Artist
       @artist = @@all.select{|x| x.name == name}
     else
       @artist = Artist.new(name)
+      @@all << @artist
     end
     @artist
   end
