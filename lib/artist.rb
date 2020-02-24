@@ -20,11 +20,20 @@ class Artist
   
   def songs 
     Song.all.select{|x| x.artist == self}
-  end 
-  
+  end
   
   def find_or_create_by_name(name)
+    if self.all.include?(name)
+      @artist = self.all.select{|x| x.name == name}
+    else
+      @artist = Artist.new(name)
+      @@all << @Artist
+    end
+    @artist
   end
+  
+  # def find_or_create_by_name(name)
+  # end
     
   #   if self.all.include?(name)
   #     @artist = self.all.select{|x| x.name == name}
