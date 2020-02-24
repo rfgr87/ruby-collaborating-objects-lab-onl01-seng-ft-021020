@@ -24,13 +24,16 @@ class Artist
   
   
   def find_or_create_by_name(name)
-    if self.all.include?(name)
-      @artist = self.all.select{|x| x.name == name}
-    else
-      @artist = Artist.new(name)
-    end
-    @artist
   end
+    
+  #   if self.all.include?(name)
+  #     @artist = self.all.select{|x| x.name == name}
+  #   else
+  #     @artist = Artist.new(name)
+  #     @@all << @artist
+  #   end
+  #   @artist
+  # end
     
   def print_songs
     Song.all.select do |x| 
