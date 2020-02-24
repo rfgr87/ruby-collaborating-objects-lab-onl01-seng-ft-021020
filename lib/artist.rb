@@ -22,8 +22,8 @@ class Artist
     Song.all.select{|x| x.artist == self}
   end 
   
+  binding.pry
   def find_or_create_by_name(name)
-    binding.pry
     if self.all.include?(name)
       @artist = self.all.select{|x| x.name == name}
     else
