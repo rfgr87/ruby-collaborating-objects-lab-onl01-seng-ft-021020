@@ -24,7 +24,7 @@ class Song
   end
 
   def artist_name=(name)
-    Artist.all.any? (name)
+    Artist.all.any?{|x| x.name == name}
       @artist_object = Artist.all.select{|x| x.name == name} 
       self.artist = @artist_object  
     else
