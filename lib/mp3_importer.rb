@@ -1,12 +1,12 @@
 class MP3Importer
   
-  def initialize(file)
-    @file = file
+  def initialize(path)
+    @path = path
     @mp3_file_names = []
   end
   
-  def files(file)
-    @mp3_file_names = Dir.entries(file)
+  def files(path)
+    @mp3_file_names = Dir.entries(path)
     @mp3_file_names
   end
   
